@@ -15,8 +15,10 @@ class Solution:
     ) -> NDArray[np.float64]:
         # Perform Linear regression
         # Formula: W -= a * dW * L
-        # Where W is the vector of weights, a is the learning rate, dW is the derivative of the losses for each weight
-        # and L is the losses for each weight.
+        # Where W is the vector of weights, 
+        # a is the learning rate,
+        # dW is the derivative of the loss for each weight
+        # and L is the vector of losses for each weight.
 
         for _ in range(num_iterations):
             # calculate predicions from model
@@ -25,11 +27,10 @@ class Solution:
             # calculate loss (L) in prediction
             loss = Y - predictions
 
-            # apply the derivative function (-2/N) to each weight to get the gradient (dW).
-            # note N is just len(X)
+            # apply the derivative function (-2/len(X)) to each feature to get the gradient (dW).
             gradient = -2 * X.T / len(X)
 
-            # perform the learning step by applying the gradient to the weights, 
+            # update the weights by applying the gradient to the weights, 
             # scaled by the learning rate.
             initial_weights -= self.learning_rate * gradient @ loss
 
