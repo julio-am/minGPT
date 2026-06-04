@@ -1,6 +1,6 @@
 # My GPT, Built from Scratch
 
-> Assembled from the NeetCode ML course on [NeetCode.io]([https://neetcode.io](https://neetcode.io/practice?tab=coreSkills&topic=Machine+Learning)
+> Assembled from the NeetCode ML course on [NeetCode.io](https://neetcode.io/practice?tab=coreSkills&topic=Machine+Learning)
 > Built by **Julio** on June 4, 2026
 
 Every file in this project is code I wrote and submitted, progressively building from gradient descent
