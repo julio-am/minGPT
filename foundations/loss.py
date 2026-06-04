@@ -9,10 +9,10 @@ class Solution:
         # y_pred: predicted probabilities
         # Hint: add a small epsilon (1e-7) to y_pred to avoid log(0)
         # return round(your_answer, 4)
-        scalar = 1.0/len(y_pred)
+        scalar = -1.0/len(y_pred)
         y_pred += 1e-7
 
-        losses = np.abs(y_true * np.log(y_pred) + (1 - y_true) * np.log(1-y_pred))
+        losses = y_true * np.log(y_pred) + (1 - y_true) * np.log(1-y_pred)
         loss = scalar * sum(losses)
 
         return np.round(loss, 4)
@@ -25,7 +25,7 @@ class Solution:
         # return round(your_answer, 4)
         y_pred += 1e-7
         scalar = -1.0 / len(y_pred)
-
+        
         loss = np.sum(y_true * np.log(y_pred))
         return np.round(scalar * loss, 4)
 
