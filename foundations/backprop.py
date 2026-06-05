@@ -17,11 +17,14 @@ class Solution:
         #Loss: L = 0.5 * (y_hat - y_true)^2
 
         # Gradient:
-        # dl_dz = (y_hat - y_true) * y_hat * (1 - y_hat)
-        # dl_db = dl_dz     
-        # dl_dw = dl_dz * x   
+        # dl_dz is the overall derivative of the loss function:
         dl_dz = (y_hat - y_true) * y_hat * (1 - y_hat)
+        
+        # dl_dw is the derivative of the loss function with respect to each weight:
         dl_dw = dl_dz * x
+
+        # dl_db is the derivative of the loss runction with respect to the scalar bias.
+        # for the sigmoid function, it is the same as dl_dz
 
         # Return: (dL_dw rounded to 5 decimals, dL_db rounded to 5 decimals)
         return np.round(dl_dw, 5), np.round(dl_dz, 5)
